@@ -1,77 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <head>
-    <title>❤永远开心❤</title>
-</head>
-<body>
-<canvas id="canvas"></canvas>
-<style type="text/css">
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-</style>
-<script type="text/javascript">
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+    <meta charset="utf-8">
+    <title>canvas爱心</title>
 
-
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
-
-    var texts = 'I LOVE U'.split('');
-
-    var fontSize = 16;
-    var columns = canvas.width / fontSize;
-    // 用于计算输出文字时坐标，所以长度即为列数
-    var drops = [];
-    //初始值
-    for (var x = 0; x < columns; x++) {
-        drops[x] = 1;
-    }
-
-    function draw() {
-        //让背景逐渐由透明到不透明
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        //文字颜色
-        ctx.fillStyle = '#f584b7';
-        ctx.font = fontSize + 'px arial';
-        //逐行输出文字
-        for (var i = 0; i < drops.length; i++) {
-            var text = texts[Math.floor(Math.random() * texts.length)];
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-            if (drops[i] * fontSize > canvas.height || Math.random() > 0.95) {
-                drops[i] = 0;
-            }
-
-            drops[i]++;
-        }
-    }
-
-    setInterval(draw, 33);
-</script>
-</body>
-</html>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
-    <TITLE> love</TITLE>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <META NAME="Generator" CONTENT="EditPlus">
-    <META NAME="Author" CONTENT="">
-    <META NAME="Keywords" CONTENT="">
-    <META NAME="Description" CONTENT="">
-    <meta charset="UTF-8">
     <style>
         html, body {
             height: 100%;
             padding: 0;
             margin: 0;
-            background: rgb(0, 0, 0);
+            background: #000;
         }
 
         canvas {
@@ -81,10 +19,11 @@
         }
 
         #child {
-            position: absolute;
+            position: fixed;
+            top: 50%;
             left: 50%;
-            top: 48%;
-            transform: translate(-50%, -50%);
+            margin-top: -75px;
+            margin-left: -100px;
 
         }
 
@@ -93,17 +32,19 @@
             font-size: 40px;
             color: #f584b7;
             position: relative;
+            top: -70px;
+            left: -65px;
         }
     </style>
 </head>
 <body>
-<div id="child"><h4>💗You And Me💗</h4></div><!--这里写名字❤！！！-->
+<div id="child"><h4>💗致亲爱的X女士</h4></div><!--这里写名字❤！！！-->
 <canvas id="pinkboard"></canvas>
-<!-- <canvas id= "canvas"></canvas>  -->
+
 <script>
     /*
-   * Settings
-   */
+     * Settings
+     */
     var settings = {
         particles: {
             length: 500, // maximum amount of particles
@@ -115,7 +56,7 @@
     };
 
     /*
-     * RequestAnimationFrame polyfill by Erik Möller
+     * RequestAnimationFrame polyfill by Erik M?ller
      */
     (function () {
         var b = 0;
@@ -174,6 +115,7 @@
     /*
      * Particle class
      */
+
     var Particle = (function () {
         function Particle() {
             this.position = new Point();
@@ -365,15 +307,11 @@
             onResize();
             render();
         }, 10);
-    })(document.getElementById('pinkboard'));
-
-
-</script>
-
-</BODY>
-
+    })(document.getElementById('pinkboard'));</script>
 <audio autoplay="autoplay" loop="loop" preload="auto" id="music" controls>
-    <source src="./pianai.mp3" type="audio/ogg">
-    <source src="./pianai.mp3" type="audio/mpeg">
+    <source src="hhxk-pd.mp3" type="audio/ogg">
+    <source src="hhxk-pd.mp3" type="audio/mpeg">
 </audio>
-</HTML>
+</body>
+</html>
+
