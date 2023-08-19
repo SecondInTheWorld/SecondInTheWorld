@@ -11,26 +11,41 @@ html, body {
     height: 100%;
 }
 
-/*html {*/
-/*    background: #000;*/
-/*    height: 100%;*/
-/*}*/
-
 .title-name {
     color: #FCA7B4;
     font-family: 'KaTi_GB2312';
     font-weight: 700;
-    text-align: center
+    text-align: center;
+    font-size: larger;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .title-name1 {
-    color: #F6637A;
-    text-align: center
+    color: #ea80b0;
+    position: absolute;
+    text-align: center;
+    font-size: larger;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.audio {
+    position: fixed;
+    top: 5%;
+}
+
+html {
+    background: #000;
+    height: 100%;
 }
 
 /*最外层容器样式*/
 .wrap {
-    position: relative;
+    /*position: relative;*/
     position: absolute;
     top: 0;
     right: 0;
