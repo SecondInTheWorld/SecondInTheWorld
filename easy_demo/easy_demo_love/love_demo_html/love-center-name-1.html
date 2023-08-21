@@ -157,7 +157,7 @@
 
             var size = image.width * ease(this.age / settings.particles.duration);
             context.globalAlpha = 1 - this.age / settings.particles.duration;
-            context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+            // context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
         };
         return Particle;
     })();

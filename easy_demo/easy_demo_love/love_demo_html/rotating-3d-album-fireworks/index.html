@@ -52,7 +52,16 @@
             </span>
     </div>
 </div>
-<div id="child"><h4>💗致亲爱的X女士</h4></div><!--这里写名字❤！！！-->
+
+<div class="title-name"><h4>💗致亲爱的X女士</h4></div><!--这里写名字❤！！！-->
+<div class="title-name1"><h3>我❤喜欢你❤，请让我爱你一辈子</h3></div><!--这里写名字❤！！！-->
+<div class="audio">
+    <audio autoplay="autoplay" loop="loop" preload="auto" id="music" controls>
+        <source src="../pianai.mp3" type="audio/ogg">
+        <source src="../pianai.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
 <canvas id="canvas"></canvas>
 <script>
     function initVars() {
@@ -364,7 +373,7 @@
                     }
                 }
                 ctx.globalAlpha = sparks[i].alpha;
-                ctx.drawImage(sparks[i].img, point.x - size / 2, point.y - size / 2, size, size);
+                // ctx.drawImage(sparks[i].img, point.x - size / 2, point.y - size / 2, size, size);
             }
         }
     }

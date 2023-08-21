@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>3D烟花</title>
- 
+
 <style>
 html,body{
 	margin:0px;
@@ -12,7 +12,7 @@ html,body{
 	overflow:hidden;
 	background:#000;
 }
- 
+
 #canvas{
 	width:100%;
 	height:100%;
@@ -22,7 +22,7 @@ html,body{
 <body>
 <canvas id="canvas"></canvas><script>
 function initVars(){
- 
+
 	pi=Math.PI;
 	ctx=canvas.getContext("2d");
 	canvas.width=canvas.clientWidth;
@@ -48,9 +48,9 @@ function initVars(){
 	pow4=new Audio(s+"pow4.ogg");
 	frames = 0;
 }
- 
+
 function rasterizePoint(x,y,z){
- 
+
 	var p,d;
 	x-=playerX;
 	y-=playerY;
@@ -82,9 +82,9 @@ function rasterizePoint(x,y,z){
 		};
 	}
 }
- 
+
 function spawnSeed(){
-	
+
 	seed=new Object();
 	seed.x=-50+Math.random()*100;
 	seed.y=25;
@@ -95,9 +95,9 @@ function spawnSeed(){
 	seed.born=frames;
 	seeds.push(seed);
 }
- 
+
 function splode(x,y,z){
-	
+
 	t=5+parseInt(Math.random()*150);
 	sparkV=1+Math.random()*2.5;
 	type=parseInt(Math.random()*3);
@@ -152,9 +152,9 @@ function splode(x,y,z){
 	pow.volume=1.5/(1+d/10);
 	pow.play();
 }
- 
+
 function doLogic(){
-	
+
 	if(seedTimer<frames){
 		seedTimer=frames+seedInterval*Math.random()*10;
 		spawnSeed();
@@ -189,7 +189,7 @@ function doLogic(){
 			}else{
 				sparks[i].trail.push(point);
 			}
-			if(sparks[i].trail.length>5)sparks[i].trail.splice(0,1);				
+			if(sparks[i].trail.length>5)sparks[i].trail.splice(0,1);
 			sparks[i].x+=sparks[i].vx;
 			sparks[i].y+=sparks[i].vy;
 			sparks[i].z+=sparks[i].vz;
@@ -208,19 +208,19 @@ function doLogic(){
 	playerZ=Math.cos(p+t)*d;
 	yaw=pi+p+t;
 }
- 
+
 function rgb(col){
-	
+
 	var r = parseInt((.5+Math.sin(col)*.5)*16);
 	var g = parseInt((.5+Math.cos(col)*.5)*16);
 	var b = parseInt((.5-Math.sin(col)*.5)*16);
 	return "#"+r.toString(16)+g.toString(16)+b.toString(16);
 }
- 
+
 function draw(){
-	
+
 	ctx.clearRect(0,0,cx*2,cy*2);
-	
+
 	ctx.fillStyle="#ff8";
 	for(i=-100;i<100;i+=3){
 		for(j=-100;j<100;j+=4){
@@ -232,7 +232,7 @@ function draw(){
 				a = 0.75 - Math.pow(d / 100, 6) * 0.75;
 				if(a>0){
 					ctx.globalAlpha = a;
-					ctx.fillRect(point.x-size/2,point.y-size/2,size,size);				
+					ctx.fillRect(point.x-size/2,point.y-size/2,size,size);
 				}
 			}
 		}
@@ -285,9 +285,9 @@ function draw(){
 		}
 	}
 }
- 
+
 function frame(){
- 
+
 	if(frames>100000){
 		seedTimer=0;
 		frames=0;
@@ -297,14 +297,14 @@ function frame(){
 	doLogic();
 	requestAnimationFrame(frame);
 }
- 
+
 window.addEventListener("resize",()=>{
 	canvas.width=canvas.clientWidth;
 	canvas.height=canvas.clientHeight;
 	cx=canvas.width/2;
 	cy=canvas.height/2;
 });
- 
+
 initVars();
 frame();</script>
 <div style="text-align:center;">
