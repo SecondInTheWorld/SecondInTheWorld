@@ -33,6 +33,16 @@ html, body {
     transform: translate(-50%, -50%);
 }
 
+.title-name2 {
+    color: #ea80b0;
+    position: absolute;
+    text-align: center;
+    font-size: larger;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .audio {
     position: fixed;
     top: 5%;
